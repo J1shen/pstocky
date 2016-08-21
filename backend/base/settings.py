@@ -74,6 +74,9 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'django_filters',
+    # ebooks and docs
+    'flatfile',
+    # accounts
     'accounts',
 )
 
@@ -169,6 +172,14 @@ PIN_RANGE = (100000, 999999)
 if DEBUG is True:
     PIN_LOCK_TIME = 20
     PIN_DAY_LIMIT = 1000
+
+
+# Qiniu
+QINIU_ACCESS_KEY = os.environ.get('QINIU_ACCESS_KEY', '')
+QINIU_SECRET_KEY = os.environ.get('QINIU_SECRET_KEY', '')
+QINIU_BUCKET_NAME = os.environ.get('QINIU_BUCKET_NAME', 'ebook')
+QINIU_BUCKET_CDN_DOMAIN = os.environ.get('QINIU_BUCKET_CDN_DOMAIN', 'ebook-cdn.safebang.org')
+QINIU_SECURE_URL = False
 
 
 try:
